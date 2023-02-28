@@ -6,6 +6,8 @@ library(reshape2)
 library(survival)
 library(survminer)
 library(car)
+library(grid)
+library(ggpubr)
 
 # Loading and reformatting data--------------------------------------------------------------------
 
