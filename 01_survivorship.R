@@ -118,6 +118,10 @@ Bp_O <- survdiff(Surv(surv_time, censor) ~ maternal_age, data = surv_Bp_O)
 # The following code should fully reproduce the manuscript figure (multipanel plot of survivorship curves)
 
 # BmanL5 strain:-----------------------------------------------------
+
+surv_L5$final_line <- factor(surv_L5$final_line, 
+                             levels = c("F0 NA L5", "F1 3 L5", "F1 6 L5", "F1 10 L5"))
+
 fit_L5 <- survfit(Surv(surv_time, censor) ~ final_line, data = surv_L5)
 
 print(fit_L5)
@@ -150,6 +154,10 @@ surv_L5$plot <- surv_L5$plot +  geom_label(
 surv_L5
 
 # BmanRUS strain:-----------------------------------------------------
+
+surv_RUS$final_line <- factor(surv_RUS$final_line, 
+                             levels = c("F0 NA RUS", "F1 3 RUS", "F1 11 RUS"))
+
 fit_RUS <- survfit(Surv(surv_time, censor) ~ final_line, data = surv_RUS)
 
 print(fit_RUS)
@@ -181,6 +189,10 @@ surv_RUS$plot <- surv_RUS$plot +  geom_label(
 surv_RUS
 
 # BmanRUS-RE strain:-----------------------------------------------------
+
+surv_RUS_RE$final_line <- factor(surv_RUS_RE$final_line, 
+                             levels = c("F0 NA RUS-RE", "F1 3 RUS-RE", "F1 6 RUS-RE", "F1 10 RUS-RE"))
+
 fit_RUS_RE <- survfit(Surv(surv_time, censor) ~ final_line, data = surv_RUS_RE)
 
 print(fit_RUS_RE)
@@ -212,6 +224,10 @@ surv_RUS_RE$plot <- surv_RUS_RE$plot +  geom_label(
 surv_RUS_RE
 
 # BpL1 strain:-----------------------------------------------------
+
+surv_BpL1$final_line <- factor(surv_BpL1$final_line, 
+                             levels = c("F0 NA BpL1", "F1 3 BpL1", "F1 6 BpL1", "F1 9 BpL1"))
+
 fit_BpL1 <- survfit(Surv(surv_time, censor) ~ final_line, data = surv_BpL1)
 
 print(fit_BpL1)
